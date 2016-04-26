@@ -24,19 +24,21 @@ Partial Class FennelLoanSystem
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FennelLoanSystem))
+        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Account", 1, 1)
+        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Balance Sheet", 2, 2)
+        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Finacial", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2})
         Dim ButtonBar1_Group_0 As Janus.Windows.ButtonBar.ButtonBarGroup = New Janus.Windows.ButtonBar.ButtonBarGroup
         Dim ButtonBar1_Group_1 As Janus.Windows.ButtonBar.ButtonBarGroup = New Janus.Windows.ButtonBar.ButtonBarGroup
         Dim ButtonBar1_Group_2 As Janus.Windows.ButtonBar.ButtonBarGroup = New Janus.Windows.ButtonBar.ButtonBarGroup
         Dim ButtonBar1_Group_3 As Janus.Windows.ButtonBar.ButtonBarGroup = New Janus.Windows.ButtonBar.ButtonBarGroup
-        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Daily Balace Sheet")
-        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node4")
-        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node5")
-        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node6")
-        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Node7")
-        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Finacial", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3, TreeNode4, TreeNode5})
         Me.ButtonBarContainerControl1 = New Janus.Windows.ButtonBar.ButtonBarContainerControl
-        Me.BtnClientDashBoard = New System.Windows.Forms.Button
+        Me.Button2 = New System.Windows.Forms.Button
         Me.ImgListLeftMenu = New System.Windows.Forms.ImageList(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.BtnClientDashBoard = New System.Windows.Forms.Button
+        Me.ButtonBarContainerControl3 = New Janus.Windows.ButtonBar.ButtonBarContainerControl
+        Me.ButtonBarContainerControl2 = New Janus.Windows.ButtonBar.ButtonBarContainerControl
+        Me.TreeView1 = New System.Windows.Forms.TreeView
         Me.UiPanelManager1 = New Janus.Windows.UI.Dock.UIPanelManager(Me.components)
         Me.uiPanel0 = New Janus.Windows.UI.Dock.UIPanel
         Me.uiPanel0Container = New Janus.Windows.UI.Dock.UIPanelInnerContainer
@@ -57,12 +59,9 @@ Partial Class FennelLoanSystem
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnClose = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
-        Me.ButtonBarContainerControl2 = New Janus.Windows.ButtonBar.ButtonBarContainerControl
-        Me.ButtonBarContainerControl3 = New Janus.Windows.ButtonBar.ButtonBarContainerControl
-        Me.TreeView1 = New System.Windows.Forms.TreeView
+        Me.ImgFinacial = New System.Windows.Forms.ImageList(Me.components)
         Me.ButtonBarContainerControl1.SuspendLayout()
+        Me.ButtonBarContainerControl2.SuspendLayout()
         CType(Me.UiPanelManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.uiPanel0, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.uiPanel0.SuspendLayout()
@@ -72,7 +71,6 @@ Partial Class FennelLoanSystem
         CType(Me.uiPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.uiPanel1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
-        Me.ButtonBarContainerControl2.SuspendLayout()
         Me.SuspendLayout()
         '
         'ButtonBarContainerControl1
@@ -84,6 +82,59 @@ Partial Class FennelLoanSystem
         Me.ButtonBarContainerControl1.Name = "ButtonBarContainerControl1"
         Me.ButtonBarContainerControl1.Size = New System.Drawing.Size(163, 464)
         Me.ButtonBarContainerControl1.TabIndex = 2
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.AutoEllipsis = True
+        Me.Button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Red
+        Me.Button2.ImageIndex = 6
+        Me.Button2.ImageList = Me.ImgListLeftMenu
+        Me.Button2.Location = New System.Drawing.Point(3, 103)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(157, 41)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Teller"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'ImgListLeftMenu
+        '
+        Me.ImgListLeftMenu.ImageStream = CType(resources.GetObject("ImgListLeftMenu.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImgListLeftMenu.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImgListLeftMenu.Images.SetKeyName(0, "business.png")
+        Me.ImgListLeftMenu.Images.SetKeyName(1, "close.png")
+        Me.ImgListLeftMenu.Images.SetKeyName(2, "coins.png")
+        Me.ImgListLeftMenu.Images.SetKeyName(3, "computer.png")
+        Me.ImgListLeftMenu.Images.SetKeyName(4, "exchange.png")
+        Me.ImgListLeftMenu.Images.SetKeyName(5, "people.png")
+        Me.ImgListLeftMenu.Images.SetKeyName(6, "Teller.png")
+        Me.ImgListLeftMenu.Images.SetKeyName(7, "client.png")
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.AutoEllipsis = True
+        Me.Button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Red
+        Me.Button1.ImageIndex = 3
+        Me.Button1.ImageList = Me.ImgListLeftMenu
+        Me.Button1.Location = New System.Drawing.Point(4, 52)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(157, 41)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Credit Officer"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'BtnClientDashBoard
         '
@@ -105,18 +156,47 @@ Partial Class FennelLoanSystem
         Me.BtnClientDashBoard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnClientDashBoard.UseVisualStyleBackColor = True
         '
-        'ImgListLeftMenu
+        'ButtonBarContainerControl3
         '
-        Me.ImgListLeftMenu.ImageStream = CType(resources.GetObject("ImgListLeftMenu.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImgListLeftMenu.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImgListLeftMenu.Images.SetKeyName(0, "business.png")
-        Me.ImgListLeftMenu.Images.SetKeyName(1, "close.png")
-        Me.ImgListLeftMenu.Images.SetKeyName(2, "coins.png")
-        Me.ImgListLeftMenu.Images.SetKeyName(3, "computer.png")
-        Me.ImgListLeftMenu.Images.SetKeyName(4, "exchange.png")
-        Me.ImgListLeftMenu.Images.SetKeyName(5, "people.png")
-        Me.ImgListLeftMenu.Images.SetKeyName(6, "Teller.png")
-        Me.ImgListLeftMenu.Images.SetKeyName(7, "client.png")
+        Me.ButtonBarContainerControl3.Location = New System.Drawing.Point(0, 0)
+        Me.ButtonBarContainerControl3.Name = "ButtonBarContainerControl3"
+        Me.ButtonBarContainerControl3.Size = New System.Drawing.Size(0, 0)
+        Me.ButtonBarContainerControl3.TabIndex = 4
+        '
+        'ButtonBarContainerControl2
+        '
+        Me.ButtonBarContainerControl2.Controls.Add(Me.TreeView1)
+        Me.ButtonBarContainerControl2.Location = New System.Drawing.Point(1, 97)
+        Me.ButtonBarContainerControl2.Name = "ButtonBarContainerControl2"
+        Me.ButtonBarContainerControl2.Size = New System.Drawing.Size(163, 464)
+        Me.ButtonBarContainerControl2.TabIndex = 3
+        '
+        'TreeView1
+        '
+        Me.TreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TreeView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TreeView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TreeView1.HideSelection = False
+        Me.TreeView1.ImageIndex = 0
+        Me.TreeView1.ImageList = Me.ImgFinacial
+        Me.TreeView1.Indent = 11
+        Me.TreeView1.ItemHeight = 30
+        Me.TreeView1.Location = New System.Drawing.Point(0, 0)
+        Me.TreeView1.Name = "TreeView1"
+        TreeNode1.ImageIndex = 1
+        TreeNode1.Name = "Node1"
+        TreeNode1.SelectedImageIndex = 1
+        TreeNode1.Text = "Account"
+        TreeNode2.ImageIndex = 2
+        TreeNode2.Name = "Node4"
+        TreeNode2.SelectedImageIndex = 2
+        TreeNode2.Text = "Balance Sheet"
+        TreeNode3.Name = "Node0"
+        TreeNode3.Text = "Finacial"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3})
+        Me.TreeView1.SelectedImageIndex = 0
+        Me.TreeView1.Size = New System.Drawing.Size(163, 464)
+        Me.TreeView1.TabIndex = 0
         '
         'UiPanelManager1
         '
@@ -332,85 +412,13 @@ Partial Class FennelLoanSystem
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 66)
         '
-        'Button1
+        'ImgFinacial
         '
-        Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.AutoEllipsis = True
-        Me.Button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Red
-        Me.Button1.ImageIndex = 3
-        Me.Button1.ImageList = Me.ImgListLeftMenu
-        Me.Button1.Location = New System.Drawing.Point(4, 52)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(157, 41)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Credit Officer"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.AutoEllipsis = True
-        Me.Button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Red
-        Me.Button2.ImageIndex = 6
-        Me.Button2.ImageList = Me.ImgListLeftMenu
-        Me.Button2.Location = New System.Drawing.Point(3, 103)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(157, 41)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Teller"
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'ButtonBarContainerControl2
-        '
-        Me.ButtonBarContainerControl2.Controls.Add(Me.TreeView1)
-        Me.ButtonBarContainerControl2.Location = New System.Drawing.Point(1, 97)
-        Me.ButtonBarContainerControl2.Name = "ButtonBarContainerControl2"
-        Me.ButtonBarContainerControl2.Size = New System.Drawing.Size(163, 464)
-        Me.ButtonBarContainerControl2.TabIndex = 3
-        '
-        'ButtonBarContainerControl3
-        '
-        Me.ButtonBarContainerControl3.Location = New System.Drawing.Point(0, 0)
-        Me.ButtonBarContainerControl3.Name = "ButtonBarContainerControl3"
-        Me.ButtonBarContainerControl3.Size = New System.Drawing.Size(0, 0)
-        Me.ButtonBarContainerControl3.TabIndex = 4
-        '
-        'TreeView1
-        '
-        Me.TreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TreeView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TreeView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TreeView1.Indent = 11
-        Me.TreeView1.ItemHeight = 30
-        Me.TreeView1.Location = New System.Drawing.Point(0, 0)
-        Me.TreeView1.Name = "TreeView1"
-        TreeNode1.Name = "Node1"
-        TreeNode1.Text = "Daily Balace Sheet"
-        TreeNode2.Name = "Node4"
-        TreeNode2.Text = "Node4"
-        TreeNode3.Name = "Node5"
-        TreeNode3.Text = "Node5"
-        TreeNode4.Name = "Node6"
-        TreeNode4.Text = "Node6"
-        TreeNode5.Name = "Node7"
-        TreeNode5.Text = "Node7"
-        TreeNode6.Name = "Node0"
-        TreeNode6.Text = "Finacial"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode6})
-        Me.TreeView1.Size = New System.Drawing.Size(163, 464)
-        Me.TreeView1.TabIndex = 0
+        Me.ImgFinacial.ImageStream = CType(resources.GetObject("ImgFinacial.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImgFinacial.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImgFinacial.Images.SetKeyName(0, "money (1).png")
+        Me.ImgFinacial.Images.SetKeyName(1, "interface.png")
+        Me.ImgFinacial.Images.SetKeyName(2, "signs.png")
         '
         'FennelLoanSystem
         '
@@ -426,6 +434,7 @@ Partial Class FennelLoanSystem
         Me.Text = "Fennel-Loan System"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ButtonBarContainerControl1.ResumeLayout(False)
+        Me.ButtonBarContainerControl2.ResumeLayout(False)
         CType(Me.UiPanelManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.uiPanel0, System.ComponentModel.ISupportInitialize).EndInit()
         Me.uiPanel0.ResumeLayout(False)
@@ -436,7 +445,6 @@ Partial Class FennelLoanSystem
         Me.uiPanel1.ResumeLayout(False)
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.ButtonBarContainerControl2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -469,5 +477,6 @@ Partial Class FennelLoanSystem
     Friend WithEvents ButtonBarContainerControl2 As Janus.Windows.ButtonBar.ButtonBarContainerControl
     Friend WithEvents TreeView1 As System.Windows.Forms.TreeView
     Friend WithEvents ButtonBarContainerControl3 As Janus.Windows.ButtonBar.ButtonBarContainerControl
+    Friend WithEvents ImgFinacial As System.Windows.Forms.ImageList
 
 End Class
